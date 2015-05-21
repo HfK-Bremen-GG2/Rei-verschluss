@@ -1,0 +1,68 @@
+ <!--
+ Dies ist ein Entwurf für eine Reißverschluss-Animation, für die jQuery und Velocity.js verwendet wurden.
+ Interaktiv ist dieser Entwurf jedoch noch nicht.
+ -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .canvas { width: 900px; height: 500px; display:inline-block; background-color: #FF0066; }
+        </style>
+            <meta charset="UTF-8">
+            <title>Reißverschluss</title>
+            <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+            <script src="js/velocity.min.js"></script>
+    </head>
+    <body>
+
+        <div class="canvas">
+            
+            <svg class="reiss" id="links" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="400px" height="400px"xml:space="preserve">
+                <g>
+
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" points="
+                    81,119.111 181,119.111 181,169.111 81,169.111 81,254.111 	"/>
+
+                    <line fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" x1="81.104" y1="89" x2="81.104" y2="119"/>
+
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" points="
+                    81.091,254.484 181.092,254.484 181.674,304.484 81.674,304.484 81.674,334.484 	"/>
+                </g>
+            </svg>
+
+            <svg class="reiss" id="rechts" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="400px" height="400px" xml:space="preserve">
+                <g>
+
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" points="
+            363.674,119.111 263.674,119.111 263.674,169.111 363.674,169.111 363.674,254.111 	"/>
+
+                    <line fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" x1="363.57" y1="89" x2="363.57" y2="119"/>
+
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel" stroke-miterlimit="10" points="
+            362.583,254.484 262.582,254.484 262,304.484 362,304.484 362,334.484 	"/>
+                </g>
+            </svg>
+        
+        </div>
+        
+                <script>
+                   $(document).ready(function() {
+                       
+                       $('#links')
+                           .velocity({ delay: 500})
+                           .velocity({ translateX: [ 220, 0 ], rotateY: "-2deg", rotateZ: "-2deg", tween: 2000 })
+                           .velocity({ translateX: [283, 220], rotateY: "0deg", rotateZ: "0deg" });
+                       
+                       $('#rechts')
+                           .velocity({ translateY: "-67.5px", tween: 500 })
+                           .velocity({ translateX: "-220px", rotateY: "2deg", rotateZ: "2deg", tween: 2000 })
+                           .velocity({ translateX: "-283px", rotateY: "0deg", rotateZ: "0deg" });
+                       
+                   });
+                </script>
+        
+    </body>
+</html>
